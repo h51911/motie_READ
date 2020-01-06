@@ -4,6 +4,7 @@ import { Carousel } from 'antd';
 class Home extends Component {
   constructor() {
     super();
+    this.state = {
       recommend: [
         {
           url: './images/ia_100000005.jpg'
