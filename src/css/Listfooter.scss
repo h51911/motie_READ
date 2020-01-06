@@ -1,0 +1,103 @@
+#footer {
+    .big {
+        margin: 0 .48rem .4rem;
+        padding-bottom: .4rem;
+        height: 4.333333rem;
+        box-sizing: border-box;
+
+        .tz {
+            height: 100%;
+            display: flex;
+            padding: .4rem;
+            align-items: center;
+            box-sizing: border-box;
+
+            .pic {
+                width: 2.093333rem;
+                height: 100%;
+                margin-right: .266667rem;
+
+                .image {
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .container {
+                float: right;
+                width: calc(100% - 1.093333rem);
+                height: 100%;
+
+                .top {
+                    height: 80%;
+                    color: #333;
+                    display: flex;
+                    flex-direction: column;
+
+                    .title {
+                        height: .42667rem;
+                        line-height: .42667rem;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        font-size: 15px;
+
+                    }
+
+                    .cover {
+                        margin-bottom: .13333rem;
+                        font-weight: 400;
+                        line-height: .58667rem;
+                        height: 1.12rem;
+                        font-size: 13px;
+                        color: #999;
+                        word-break: break-all;
+                        word-wrap: break-word;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        display: -webkit-box;
+                        overflow: hidden;
+                    }
+                }
+
+                .bottom {
+                    display: flex;
+                    height: 20%;
+                    display: flex;
+                    justify-content: space-between;
+                    // font-size: .213333rem;
+                    color: #BBB;
+
+                    .b_img {
+                        text-align: center;
+                        display: flex;
+                        align-items: center;
+
+                        img {
+                            height: .613333rem;
+                            width: .613333rem;
+                            margin: 0 .066667rem 0 0;
+                        }
+
+                        .b_t {
+                            line-height: .613333rem;
+
+                        }
+                    }
+                    .bright{
+                        display: flex;
+                        align-items: center;
+                        span{
+                            padding: .046667rem;
+                            margin: 0 0 0 .153333rem;
+                            box-sizing: border-box;
+                            color: #ccc;
+                            border: .013333rem solid #ccc;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

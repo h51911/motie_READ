@@ -1,0 +1,36 @@
+#details .nav .buy {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#details .nav .buy .buy_box {
+  text-align: center;
+  height: 100%;
+  width: 158px;
+  font-size: .4rem;
+  line-height: 40px;
+  color: #EE5048;
+  border: 1px solid #EE5048;
+  border-radius: .26667rem;
+}
+
+#details .nav .shang {
+  position: relative;
+  padding: .48rem 0;
+  background-color: #fff;
+  font-size: .4rem;
+  border-bottom: 1px solid #e5e5df;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 58px;
+}
+
+#details .nav .shang .shang_icon {
+  width: 158px;
+  text-align: center;
+  color: #333;
+  font-size: 15px;
+}

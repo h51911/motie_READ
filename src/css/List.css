@@ -1,0 +1,42 @@
+#List .nav {
+  background: #fff;
+  padding: .48rem;
+  font-size: .34667rem;
+  border-bottom: .013333rem solid #e5e5df;
+  overflow: hidden;
+}
+
+#List .nav .nav_list {
+  height: .506667rem;
+  display: flex;
+}
+
+#List .nav .nav_list .nav_title {
+  color: #666;
+  font-size: .2rem;
+  margin-right: .133333rem;
+}
+
+#List .nav .nav_list .right {
+  width: 90%;
+}
+
+#List .nav .nav_list .right ul {
+  display: flex;
+  color: #BBB;
+  font-size: .186667rem;
+  width: 100%;
+}
+
+#List .nav .nav_list .right ul li {
+  margin-right: .066667rem;
+  display: inline-block;
+  margin-bottom: .26667rem;
+  width: 20%;
+  text-align: center;
+  height: .373333rem;
+  line-height: .373333rem;
+  border: .013333rem solid #bbb;
+  border-radius: .8rem;
+  border: .013333rem solid #ee5048 !important;
+}
