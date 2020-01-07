@@ -207,8 +207,8 @@ dl li {
           float: left;
 
           img {
-            width: 2.48rem;
-            height: 3.493333rem;
+            width: 85px;
+            height: 120px;
             display: block;
 
           }
@@ -248,17 +248,18 @@ dl li {
           }
 
           p {
+            position: relative;
             height: .58667rem;
             line-height: .58667rem;
             font-size: .37333rem;
             color: #bbb;
-            margin-top: .533333rem;
+            margin-top: .666667rem;
 
             img {
               width: .4rem;
               height: .4rem;
               float: left;
-
+              margin: 5px 10px 0 0;
             }
 
             span {
@@ -272,20 +273,54 @@ dl li {
             }
 
             i {
-              width: 1.546667rem;
-              height: .533333rem;
+              right: 0;
+              top: 0;
+              position: absolute;
+
+              height: .253333rem;
               float: right;
-              border: 1px solid #bbb;
-              border-radius: .05333rem;
+
               color: #bbb;
               font-size: .32rem;
-              height: .42667rem;
+              text-align: right;
+              margin-left: .333333rem;
+
               margin-left: .13333rem;
               line-height: normal;
               // padding: .02667rem .05333rem 0;
             }
           }
         }
+      }
+
+
+      .more {
+        display: block;
+        height: 1.2rem;
+        line-height: 1.2rem;
+        font-size: .4rem;
+        text-align: center;
+        color: #ee5048;
+
+        background: #fff;
+        overflow: hidden;
+
+      }
+
+      .conNext {
+        h3 {
+          padding: .32rem .4rem;
+          font-size: .32rem;
+          line-height: .45333rem;
+          color: #333;
+
+          em {
+            color: #ee5048;
+            font-weight: 900;
+            margin-right: .266667rem;
+          }
+        }
+
       }
 
 
