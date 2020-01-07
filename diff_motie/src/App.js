@@ -9,6 +9,7 @@ import "./scss/Jxuan.css"
 // import './App.scss';
 import { Menu, Icon, Row, Col, Button, Badge } from 'antd';
 import 'antd/dist/antd.css'
+import './scss/App.scss'
 
 
 
@@ -40,10 +41,10 @@ class App extends Component {
     this.goto = this.goto.bind(this);
 
   }
-  goto (path) {
+  goto(path) {
     this.props.history.push(path)
   }
-  render () {
+  render() {
     let { menu } = this.state;
     return <div>
       <Switch>
@@ -63,7 +64,7 @@ class App extends Component {
         <Redirect to="/notfound" />
         {/* <Route path="/" component={Home}/> */}
       </Switch>
-      <Row style={{ backgroundColor: '#fff' }} className="bottom">
+      <Row style={{ backgroundColor: '#fff', width: '100%' }} className="chooseitem">
         <Col span={8} style={{ lineHeight: '49px', textAlign: 'center' }}>
           <Button
             type="link"
@@ -80,7 +81,7 @@ class App extends Component {
 
         </Col>
         <Col span={8} style={{ lineHeight: '49px', textAlign: 'center' }}>
-          
+
           <Button
             type="link"
             icon="login"
