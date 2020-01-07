@@ -9,7 +9,16 @@ import Sponsor from '../components/sponsor'
 
 
 class Reg extends Component {
+    constructor() {
 
+        super();
+        this.gotoLogin = this.gotoLogin.bind(this)
+    }
+
+
+    gotoLogin() {
+        this.props.history.push('/login')
+    }
     render() {
 
         return (
@@ -29,7 +38,7 @@ class Reg extends Component {
 
                     </div>
                     <button className='regbtn'>登录/注册</button>
-                    <button className='loginbtn'> 账号密码登录</button>
+                    <button className='loginbtn' onClick={this.gotoLogin.bind(null)}> 账号密码登录</button>
                 </div>
 
                 <Sponsor />

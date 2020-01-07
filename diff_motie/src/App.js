@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { HashRouter, Route, Link, NavLink, Switch, Redirect, withRouter } from 'react-router-dom';
 
 import Home from './pages/Home';
-import My from './pages/My';
+import Mine from './pages/mine';
 import Sj from './pages/Sj';
-
+import Reg from './pages/reg';
+import Login from './pages/login';
 import "./scss/Jxuan.css"
 // import './App.scss';
 import { Menu, Icon, Row, Col, Button, Badge } from 'antd';
@@ -31,8 +32,8 @@ class App extends Component {
         icon: 'star'
       },
       {
-        name: 'my',
-        path: '/my',
+        name: 'mine',
+        path: '/mine',
         text: '我的',
         icon: 'my'
       }
@@ -52,7 +53,9 @@ class App extends Component {
         <Route path='/sj' component={Sj} />
 
         <Route path='/home' component={Home} />
-        <Route path='/my' component={My} />
+        <Route path='/mine' component={Mine} />
+        <Route path='/reg' component={Reg} />
+        <Route path='/login' component={Login} />
         {/* <Route path='/goods/:id' component={Goods} />
         <Route path='/login' component={Login} />
         <Route path='/reg' component={Reg} /> */}
@@ -85,7 +88,7 @@ class App extends Component {
           <Button
             type="link"
             icon="login"
-            onClick={this.goto.bind(this, '/my')}
+            onClick={this.goto.bind(this, '/login')}
           >我的</Button>
 
         </Col>

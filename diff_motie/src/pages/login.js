@@ -6,7 +6,13 @@ import Sponsor from '../components/sponsor'
 
 
 class Login extends Component {
+    
 
+       
+
+    gotoReg() {
+        this.props.history.push('/reg')
+    }
 
     render() {
         return (
@@ -32,7 +38,7 @@ class Login extends Component {
 
 
                     <button className='login'>登录</button>
-                    <button className='loginbtn'> 手机快捷登录/注册</button>
+                    <button className='loginbtn' onClick={this.gotoReg.bind(this)}> 手机快捷登录/注册</button>
                 </div>
                 <Sponsor></Sponsor>
 

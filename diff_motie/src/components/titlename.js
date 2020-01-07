@@ -1,20 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Icon } from 'antd'
 import '../scss/titlename.scss'
+import { withRouter } from 'react-router-dom'
 
-const Titlename = (props) => {
-    return (
-        <div className='regtitle'>
-            <Icon className='backto' type="left"
+class Titlename extends Component {
+    constructor(props) {
+        super(props);
 
-            />
+        this.gotoHome = this.gotoHome.bind(this);
+    }
 
-            <h2 >{props.children}</h2>
+    gotoHome() {
+        this.props.history.push('/home')
+    }
+    render() {
+        return (
+            <div className='regtitle'>
+                <Icon className='backto' type="left"
 
-            <div className='backtohome'><Icon type="home" /></div>
-        </div>
-    )
+                />
+
+                <h2 >{this.props.children}</h2>
+
+                <div className='backtohome'><Icon type="home" onClick={this.gotoHome.bind(null)} /></div>
+            </div>
+        )
+    }
+
 }
+Titlename = withRouter(Titlename)
 
 export default Titlename;
 
