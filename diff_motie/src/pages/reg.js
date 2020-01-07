@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import '../css/base.css'
 import '../scss/reg.scss'
-import { Icon } from 'antd'
 import 'antd/dist/antd.css';
 import '../iconfont/iconfont.css'
-import Titlename from './titlename'
-import Sponsor from './sponsor'
+import Titlename from '../components/titlename'
+import Sponsor from '../components/sponsor'
 
 
 

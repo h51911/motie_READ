@@ -6,6 +6,7 @@
 
 .othercompany {
   display: flex;
+  margin-bottom: 1.25rem;
 }
 
 .othercompany li {

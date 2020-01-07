@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import '../scss/login.scss';
-import Titlename from './titlename'
-import Sponsor from './sponsor'
+
+import Titlename from '../components/titlename'
+import Sponsor from '../components/sponsor'
 
 
 class Login extends Component {
