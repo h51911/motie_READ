@@ -2,17 +2,18 @@ import React, { Component } from 'react';
 import '../css/Listfooter.css';
 
 class Listfooter extends Component {
+    getgoto = (id) => {
+        this.props.goto(id);
+    }
     render() {
         let { datalist } = this.props;
-        let datas = datalist.bookTags;
-        console.log(datas);
         return (
             <div id="footer">
                 {
                     datalist.length >= 1 ?
                         datalist.map((item, index) => {
                             return (
-                                <dl className="big" key={index}>
+                                <dl className="big" key={index} onClick={this.getgoto.bind('/details')}>
                                     <div className="tz">
                                         <dt className="pic">
                                             <img src={item.icon} alt="" className="image" />

@@ -1,6 +1,10 @@
 #details {
-    .nav {
+    background: #f3f3f3;
+    .con {
+        margin-top: 1.232877rem;
+
         .buy {
+            background: #fff;
             height: 40px;
             display: flex;
             align-items: center;
@@ -8,13 +12,19 @@
 
             .buy_box {
                 text-align: center;
-                height: 100%;
+                height: 38px;
                 width: 158px;
-                font-size: .4rem;
+                font-size: 16px;
                 line-height: 40px;
                 color: #EE5048;
                 border: 1px solid #EE5048;
                 border-radius: .26667rem;
+                font-weight: 400;
+            }
+
+            .read {
+                background: #EE5048;
+                color: #fff;
             }
         }
 
@@ -28,6 +38,8 @@
             justify-content: space-around;
             align-items: center;
             height: 58px;
+            color: #333;
+            box-sizing: border-box;
             // text-align: center;
 
             .shang_icon {
@@ -36,6 +48,250 @@
                 color: #333;
                 font-size: 15px;
 
+                span {
+                    margin-right: .136986rem;
+                }
+            }
+        }
+
+        .text {
+            background-color: #fff;
+            padding: .4rem .48rem 0;
+            position: relative;
+
+            .textcon {
+                height: 132px;
+                overflow: hidden;
+                color: #666;
+                font-size: 14px;
+            }
+        }
+
+        .mulu {
+            position: relative;
+            padding: .32rem .48rem 0;
+            background-color: #fff;
+            color: #333;
+
+            .mulucon {
+                border-top: 1px solid #e5e5df;
+                height: 1.33333rem;
+                position: relative;
+                font-size: .34667rem;
+                display: flex;
+                justify-content: space-around;
+
+                span {
+                    color: #999;
+                    line-height: 1.33333rem;
+                }
+
+                .first {
+                    color: #333;
+                }
+
+                .con_text {
+                    color: #999;
+                }
+
+                .lue {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    width: 4.465753rem;
+                }
+            }
+        }
+
+        .listone {
+            background: #fff;
+            margin-top: .26667rem;
+            margin-bottom: 0;
+
+            .one_title {
+                position: relative;
+                height: 1.14667rem;
+                font-size: .4rem;
+                line-height: .45333rem;
+                color: #333;
+                padding: .32rem .4rem;
+                display: flex;
+                align-items: center;
+
+                .ii {
+                    display: inline-block;
+                    width: .08rem;
+                    height: .37333rem;
+                    background-color: #ee5048 !important;
+                    margin-right: .26667rem;
+                    vertical-align: -.02667rem;
+                    border-radius: .26667rem;
+                    -webkit-transform: translateY(1px);
+                    transform: translateY(1px);
+                    font-style: italic;
+                }
+            }
+
+            .one_bottom {
+                padding: 0 .48rem .4rem;
+
+                ul {
+                    margin-bottom: 0;
+                    overflow: hidden;
+                    line-height: .64rem;
+                    display: flex;
+                    justify-content: space-around;
+
+                    li {
+                        position: relative;
+                        width: 25%;
+                        float: left;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        .one_img {
+                            width: 100%;
+                            height: 3.57333rem;
+
+                            img {
+                                height: 100%;
+                                width: 100%;
+                            }
+                        }
+
+                        .one_text {
+                            color: #333;
+                            font-size: 13px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            width: 2.410959rem;
+                        }
+                    }
+
+                    li:nth-child(-n+2) {
+                        margin-right: 8%;
+                    }
+                }
+            }
+        }
+
+        .ping {
+            background: #fff;
+            margin-top: .26667rem;
+            margin-bottom: .26667rem;
+
+            .ping_title {
+                position: relative;
+                height: 1.14667rem;
+                font-size: .4rem;
+                line-height: .45333rem;
+                color: #333;
+                padding: .32rem .4rem;
+                display: flex;
+                align-items: center;
+
+                .ii {
+                    display: inline-block;
+                    width: .08rem;
+                    height: .37333rem;
+                    background-color: #ee5048 !important;
+                    margin-right: .26667rem;
+                    vertical-align: -.02667rem;
+                    border-radius: .26667rem;
+                    -webkit-transform: translateY(1px);
+                    transform: translateY(1px);
+                    font-style: italic;
+                }
+
+                .xie {
+                    position: absolute;
+                    right: .273973rem;
+                    font-size: 13px;
+
+                    span {
+                        color: #c99b61;
+
+                    }
+                }
+            }
+
+            .ping_text {
+                ul {
+                    li {
+                        position: relative;
+                        display: block;
+                        overflow: hidden;
+                        padding: .4rem 0;
+                        margin: 0 .48rem;
+                        border-top: 1px solid #edede9;
+
+                        .pic {
+                            width: .8rem;
+                            height: .8rem;
+                            border-radius: 50%;
+                            float: left;
+
+                            img {
+                                height: 30px;
+                                width: 30px;
+                            }
+                        }
+
+                        .list_text {
+                            float: left;
+                            margin-left: .26667rem;
+                            width: 7.94667rem;
+                            display: flex;
+                            flex-direction: column;
+
+                            .name {
+                                line-height: .8rem;
+                                font-size: .37333rem;
+                                display: block;
+                                color: #427785;
+                            }
+
+                            .list_center {
+                                color: #333;
+                                font-size: .37333rem;
+                                word-spacing: 1px;
+                                line-height: .64rem;
+                                text-align: justify;
+                                max-height: 1.92rem;
+                                margin-top: .08rem;
+                                margin-bottom: .08rem;
+                                word-break: break-all;
+                                display: -webkit-box;
+                                -webkit-line-clamp: 3;
+                                -webkit-box-orient: vertical;
+                                overflow: hidden;
+                            }
+                        }
+
+                        .list_bottom {
+                            color: #999;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+
+                            .huifu {
+                                display: flex;
+                                align-items: center;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .ping_bottom {
+                height: 1.232877rem;
+                color: #ee5048;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 14.4px;
             }
         }
     }

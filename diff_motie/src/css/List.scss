@@ -1,43 +1,51 @@
 #List {
+    position: relative;
+
     .nav {
+        margin-top: 1.232877rem;
         background: #fff;
         padding: .48rem;
         font-size: .34667rem;
         border-bottom: .013333rem solid #e5e5df;
         overflow: hidden;
+        height: 4.547945rem;
+        box-sizing: border-box;
 
         .nav_list {
-            height: .506667rem;
+            height: 25%;
             display: flex;
 
             .nav_title {
                 color: #666;
-                font-size: .2rem;
+                font-size: 13px;
                 margin-right: .133333rem;
 
             }
 
             .right {
                 width: 90%;
+                height: 100%;
 
                 ul {
                     display: flex;
                     color: #BBB;
                     font-size: .186667rem;
                     width: 100%;
-                    
 
                     li {
-                        margin-right: .066667rem;
-                        display: inline-block;
-                        margin-bottom: .26667rem;
-                        width: 20%;
+                        width: 1.671233rem;
                         text-align: center;
-                        height: .373333rem;
-                        line-height: .373333rem;
-                        border: .013333rem solid #bbb;
+                        margin-left: .136986rem;
+                        display: block;
+                        font-size: .34667rem;
+                        height: .64rem;
+                        line-height: .64rem;
                         border-radius: .8rem;
-                        border: .013333rem solid #ee5048 !important;
+                        border: 1px solid #BBB !important;
+                    }
+
+                    .active {
+                        border: 1px solid #ee5048 !important;
                     }
                 }
             }
@@ -45,5 +53,6 @@
 
         }
     }
-}
 
+
+}

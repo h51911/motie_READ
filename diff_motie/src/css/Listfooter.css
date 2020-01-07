@@ -1,22 +1,25 @@
+#footer {
+  background: #fff;
+}
+
 #footer .big {
-  margin: 0 .48rem .4rem;
-  padding-bottom: .4rem;
+  margin: 0 .48rem 0;
   height: 4.333333rem;
   box-sizing: border-box;
 }
 
 #footer .big .tz {
-  height: 100%;
+  height: 4.246575rem;
   display: flex;
-  padding: .4rem;
+  padding: .4rem 0;
   align-items: center;
   box-sizing: border-box;
 }
 
 #footer .big .tz .pic {
-  width: 2.093333rem;
-  height: 100%;
   margin-right: .266667rem;
+  width: 2.465753rem;
+  height: 100%;
 }
 
 #footer .big .tz .pic .image {
@@ -27,7 +30,7 @@
 
 #footer .big .tz .container {
   float: right;
-  width: calc(100% - 1.093333rem);
+  width: calc(100% - 2.465753rem);
   height: 100%;
 }
 

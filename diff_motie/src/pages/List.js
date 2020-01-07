@@ -3,6 +3,10 @@ import '../css/List.css';
 import { Listss } from '../api';
 import Listfooter from '../components/Listfooter';
 import Header from '../components/Header';
+import '../api/icon/iconfont.css';
+import { withRouter, Switch, Route } from 'react-router-dom';
+import Details from '../pages/Details';
+import Gotop from '../components/Gotop';
 
 class List extends Component {
     constructor(props) {
@@ -11,6 +15,11 @@ class List extends Component {
         this.state = {
             datalist: []
         }
+    }
+
+    goto = () => {
+        this.props.history.replace ('/details');
+        console.log(this.props);
     }
 
     async componentDidMount() {
@@ -42,13 +51,13 @@ class List extends Component {
         return (
             <>
                 <div id="List" >
-                    <Header center="分类"/>
+                    <Header center="分类" />
                     <nav className="nav">
                         <div className="nav_list">
                             <span className="nav_title">男频</span>
                             <div className="right">
                                 <ul>
-                                    <li>男频</li>
+                                    <li className="active" onClick={this.goto.bind(this,'./details')}>男频</li>
                                     <li>女频</li>
                                     <li>出版</li>
                                 </ul>
@@ -58,7 +67,7 @@ class List extends Component {
                             <span className="nav_title">分类</span>
                             <div className="right">
                                 <ul>
-                                    <li>全部</li>
+                                    <li className="active">全部</li>
                                     <li>现代都市</li>
                                     <li>仙侠武侠</li>
                                     <li>玄幻奇幻</li>
@@ -69,7 +78,7 @@ class List extends Component {
                             <span className="nav_title">状态</span>
                             <div className="right">
                                 <ul>
-                                    <li>全部</li>
+                                    <li className="active">全部</li>
                                     <li>完结</li>
                                     <li>连载</li>
                                 </ul>
@@ -79,7 +88,7 @@ class List extends Component {
                             <span className="nav_title">价格</span>
                             <div className="right">
                                 <ul>
-                                    <li>全部</li>
+                                    <li className="active">全部</li>
                                     <li>免费</li>
                                     <li>付费</li>
                                 </ul>
@@ -87,12 +96,21 @@ class List extends Component {
                         </div>
                     </nav>
                     <footer className="footer">
-                        <Listfooter datalist={this.state.datalist} />
+                        <Listfooter datalist={this.state.datalist} goto={this.goto} />
                     </footer>
+                    <Gotop />
+
+                    <Switch>
+                        <Route path='/details' component={Details} />
+                    </Switch>
+
                 </div>
             </>
         )
     }
 }
+
+//高阶组件
+List = withRouter(List);
 
 export default List

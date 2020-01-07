@@ -8,9 +8,11 @@ function Header(props) {
         <header id="header">
             <div className="left">
                 <span className="icon"></span>
+                <span className="left_t">{tt.left}</span>
             </div>
-            <span className="left_t">{tt.left}</span>
-            <h1 className="center">{tt.center}</h1>
+            <div className="centerll">
+                <h1 className="center">{tt.center}</h1>
+            </div>
             <div className="right">
                 <span className={"iconfont " + tt.icon1}></span>
                 <span className={"iconfont " + tt.icon2}></span>

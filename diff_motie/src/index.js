@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 // import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
+import { HashRouter } from 'react-router-dom';
 
 // import store from './store';
 
 ReactDOM.render(
     // <Provider store={store}>
-        <App />,
+    <HashRouter>
+        <App />
+    </HashRouter>,
     // </Provider>,
     document.getElementById('root')
 );
