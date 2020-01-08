@@ -63,7 +63,6 @@
 }
 
 #details .con .text .textcon {
-  height: 132px;
   overflow: hidden;
   color: #666;
   font-size: 14px;
@@ -177,6 +176,35 @@
 
 #details .con .listone .one_bottom ul li:nth-child(-n+2) {
   margin-right: 8%;
+}
+
+#details .con .author {
+  background: #fff;
+  margin-top: .273973rem;
+}
+
+#details .con .author .one_title {
+  position: relative;
+  height: 1.14667rem;
+  font-size: .4rem;
+  line-height: .45333rem;
+  color: #333;
+  padding: .32rem .4rem;
+  display: flex;
+  align-items: center;
+}
+
+#details .con .author .one_title .ii {
+  display: inline-block;
+  width: .08rem;
+  height: .37333rem;
+  background-color: #ee5048 !important;
+  margin-right: .26667rem;
+  vertical-align: -.02667rem;
+  border-radius: .26667rem;
+  -webkit-transform: translateY(1px);
+  transform: translateY(1px);
+  font-style: italic;
 }
 
 #details .con .ping {

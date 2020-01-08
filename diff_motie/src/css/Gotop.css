@@ -4,11 +4,12 @@
     right: .547945rem;
     height: .821918rem;
     width: .821918rem;
-    font-size: .821918rem;
+    font-size: .821918rem !important;
     border-radius: 50% 50%;
     border: 1px solid #ccc;
     color: #999;
     z-index: 2000;
     background: #fff;
     opacity: 0.9;
+    box-sizing: border-box;
 }

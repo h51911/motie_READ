@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/Gotop.css'
+import '../api/icon/iconfont.css';
 import { BackTop } from 'antd';
 
 function Gotop() {

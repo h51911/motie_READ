@@ -13,6 +13,9 @@ https://app2.motie.com/ranking?rankType=9&sex=1&pageNo=3&siteId=99&timeLimit=4&g
 女生版
 https://app2.motie.com/ranking?rankType=9&sex=2&pageNo=1&siteId=99&timeLimit=4&group=1&pageSize=10
 
+详情页
+https://app2.motie.com/books/102518/detail
+
 
 
 出版

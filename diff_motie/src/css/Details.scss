@@ -1,5 +1,6 @@
 #details {
     background: #f3f3f3;
+
     .con {
         margin-top: 1.232877rem;
 
@@ -60,7 +61,7 @@
             position: relative;
 
             .textcon {
-                height: 132px;
+                // height: 132px;
                 overflow: hidden;
                 color: #666;
                 font-size: 14px;
@@ -173,6 +174,34 @@
                     li:nth-child(-n+2) {
                         margin-right: 8%;
                     }
+                }
+            }
+        }
+
+        .author {
+            background: #fff;
+            margin-top: .273973rem;
+            .one_title {
+                position: relative;
+                height: 1.14667rem;
+                font-size: .4rem;
+                line-height: .45333rem;
+                color: #333;
+                padding: .32rem .4rem;
+                display: flex;
+                align-items: center;
+
+                .ii {
+                    display: inline-block;
+                    width: .08rem;
+                    height: .37333rem;
+                    background-color: #ee5048 !important;
+                    margin-right: .26667rem;
+                    vertical-align: -.02667rem;
+                    border-radius: .26667rem;
+                    -webkit-transform: translateY(1px);
+                    transform: translateY(1px);
+                    font-style: italic;
                 }
             }
         }
