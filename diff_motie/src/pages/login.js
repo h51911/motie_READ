@@ -6,9 +6,9 @@ import Sponsor from '../components/sponsor'
 
 
 class Login extends Component {
-    
 
-       
+
+
 
     gotoReg() {
         this.props.history.push('/reg')
