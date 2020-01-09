@@ -3,9 +3,22 @@ import '../scss/login.scss';
 
 import Titlename from '../components/titlename'
 import Sponsor from '../components/sponsor'
+import axios from 'axios';
 
 
 class Login extends Component {
+
+    constructor() {
+        super();
+        this.state = {
+
+        }
+    }
+
+
+    gotoReg() {
+        this.props.history.push('/reg')
+    }
 
 
     render() {
@@ -14,7 +27,7 @@ class Login extends Component {
                 <Titlename>账户密码登录</Titlename>
                 <div className='main'>
                     <div className='emailtitle'>
-                        <input type="text" id='email' placeholder='输入邮箱地址'
+                        <input type="text" id='email' placeholder='输入手机号码'
                         />
                     </div>
                     <div className='passwordtitle'>
@@ -31,8 +44,8 @@ class Login extends Component {
                     </ul>
 
 
-                    <button className='login'>登录</button>
-                    <button className='loginbtn'> 手机快捷登录/注册</button>
+                    <button className='login' >登录</button>
+                    <button className='loginbtn' onClick={this.gotoReg.bind(this)}> 手机快捷登录/注册</button>
                 </div>
                 <Sponsor></Sponsor>
 

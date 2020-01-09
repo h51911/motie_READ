@@ -6,6 +6,30 @@ import Mylist from '../components/mylist'
 
 class Mine extends Component {
 
+    constructor() {
+        super();
+        this.state = {
+            phone: ''
+        }
+        this.logout = this.logout.bind(this);
+    }
+
+    componentDidMount() {
+        let { phone } = this.state;
+        phone = localStorage.getItem('phone');
+
+        this.setState({
+            phone
+        })
+    }
+
+    //退出功能
+    logout() {
+        localStorage.removeItem('phone');
+        this.props.history.push('/reg')
+    }
+
+
     render() {
 
         return (
@@ -13,7 +37,7 @@ class Mine extends Component {
             <>
                 <ul className='minetitle'>
                     <li className='usermessage'><img src="https://cdn.motieimg.com/people/mt_person_ico.png?x-oss-process=style/user_big" alt="" />
-                        <p className='username'>用户名字</p>
+                        <p className='username'>欢迎你，{this.state.phone}</p>
 
 
 
@@ -43,7 +67,9 @@ class Mine extends Component {
                 <Mylist datalist={'user-add'}>作家专区 </Mylist>
                 <Mylist datalist={'exclamation-circle'}>关于我们 </Mylist>
 
-                <div className='logout'>
+                <div className='logout'
+                    onClick={this.logout.bind(null)}
+                >
                     退出登录
                   </div>
 
