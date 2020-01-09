@@ -1,5 +1,8 @@
 #listtwo {
     position: relative;
+    padding-top: 1.22667rem;
+    background: #fff;
+    min-height: 100vh;
 
     .header {
         width: 100%;
@@ -16,7 +19,6 @@
         z-index: 1000;
         background: #fff;
         justify-content: space-between;
-
 
         .leftgg {
             width: 1.821918rem;
@@ -76,13 +78,19 @@
                 font-weight: 400;
             }
         }
+
     }
 
     .b_left {
-        width: 1.780822rem !important;
         position: absolute;
         left: 0rem;
         top: 1.232877rem;
+
+        // padding-left: 1.780822rem;
+        .ant-tabs-nav-wrap {
+            background: #f8f7f2;
+        }
+
     }
 }
 
@@ -99,6 +107,46 @@
     left: .093333rem;
 }
 
+.Kong {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 350px;
+    height: 500px;
+
+    .picimg {
+        background: url(https://pic.motieimg.com/web-wechat/dist/static/img/none-logs-bg.98d1ed5.png);
+        height: 1.69863rem;
+        width: 2.684932rem;
+        background-size: 100% 100%;
+    }
+}
+
+.bright {
+    span {
+        display: none !important;
+    }
+}
+
+.ant-tabs-tabpane {
+    #footer {
+        width: 8.219178rem;
+        margin-left: 1.480822rem;
+    }
+}
+
+
+// .ant-tabs-left-content {
+//     width: calc(100% - 1.780822rem) !important;
+//     padding-left: 1.643836rem !important;
+// }
+
+.ant-tabs-tab {
+    width: 1.780822rem !important;
+    padding-left: 10px !important;
+}
 
 .ant-tabs-top-bar {
     height: 1.09589rem !important;
@@ -118,4 +166,15 @@
 
 .ant-tabs-ink-bar {
     background-color: #EE5048 !important;
+}
+
+.ant-tabs-left-bar {
+    position: fixed;
+    left: 0px;
+    top: 1.232877rem;
+    background: #fff;
+}
+
+.ant-tabs-left-content {
+    padding-left: 0px !important;
 }

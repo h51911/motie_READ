@@ -12,4 +12,13 @@
     background: #fff;
     opacity: 0.9;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.icon-huidaodingbu{
+    height: .821918rem;
+    width: .821918rem;
+}
+

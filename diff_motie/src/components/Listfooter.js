@@ -34,7 +34,10 @@ class Listfooter extends Component {
                                                                 </div>
                                                                 <div className="bright">
                                                                     {
+                                                                        item.bookTags.length >= 1 ?
                                                                         item.bookTags.map((item, index) => <span key={index}>{item}</span>)
+                                                                        :
+                                                                        <span></span>
                                                                     }
                                                                 </div>
                                                             </div>

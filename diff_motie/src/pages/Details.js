@@ -40,7 +40,6 @@ class Details extends Component {
         //传到详情页的数据
         let datalist = datall.filter(item => item.id === datalistId);
         let introduce = datalist[0].introduce;
-        console.log(datalist);
 
         this.setState({
             datalist,
