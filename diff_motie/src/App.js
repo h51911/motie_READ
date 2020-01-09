@@ -19,6 +19,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+
       menu: [{
         name: 'sj',
         path: '/sj',
@@ -40,8 +41,25 @@ class App extends Component {
       ]
     }
     this.goto = this.goto.bind(this);
+    this.lenmon = this.lenmon.bind(this);
 
   }
+  lenmon() {
+    //获取token
+    let token = localStorage.getItem('phone');
+
+    if (!token) {
+      this.props.history.push('/reg')
+
+    }
+    else {
+      this.props.history.push('/mine')
+
+
+    }
+
+  }
+
   goto(path) {
     this.props.history.push(path)
   }
@@ -88,7 +106,7 @@ class App extends Component {
           <Button
             type="link"
             icon="login"
-            onClick={this.goto.bind(this, '/login')}
+            onClick={this.lenmon.bind(null)}
           >我的</Button>
 
         </Col>

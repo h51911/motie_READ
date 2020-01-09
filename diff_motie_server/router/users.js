@@ -181,23 +181,40 @@ Router.post('/reg', async (req, res) => {
 // });
 
 //登录 
-Router.post('/login', async (req, res) => {
+// Router.post('/login', async (req, res) => {
+//     let { phone, password } = req.body;
+//     // let { password } = req.query;
+//     let result = await mongo.find('loginname', { phone, password });
+//     if (result.length) {//成功，可以登录
+//         let token = '';
+//         //判断是否要生成token
+//         // if (keep) {//生成token
+//         token = create(phone);
+//         // }
+//         res.send(formatdata({ authorization: token }));//把token生成后发给前端
+//         // res.send(formatdata());
+//     } else {
+//         res.send(formatdata({ code: 0 }));
+//     }
+//     // console.log(req.body);
+// });
+//登录
+   Router.post('/login', async (req, res) => {
     let { phone, password } = req.body;
-    // let { password } = req.query;
-    let result = await mongo.find('loginname', { phone, password });
-    if (result.length) {//成功，可以登录
-        let token = '';
-        //判断是否要生成token
-        // if (keep) {//生成token
-        token = create(phone);
-        // }
-        res.send(formatdata({ authorization: token }));//把token生成后发给前端
-        // res.send(formatdata());
-    } else {
+
+    let result = await mongo.find('user', { phone, password });
+    if (result.length) {
+        //用户存在
         res.send(formatdata({ code: 0 }));
+
     }
-    // console.log(req.body);
-});
+    else {
+        //可以注册
+        result = formatdata();
+        res.send(formatdata());
+    }
+
+})
 
 Router.post('/userfind', async (req, res) => {
     let { phone } = req.body;
