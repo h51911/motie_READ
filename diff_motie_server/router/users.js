@@ -134,11 +134,11 @@ Router.get('/shoppingcarget', async (req, res) => {
 Router.post('/reg', async (req, res) => {
 
     let {
-        number,
+        phone,
         password
     } = req.body;
     let data = await mongo.create('user', [{
-        number,
+        phone,
         password
 
     }]);
@@ -198,6 +198,23 @@ Router.post('/login', async (req, res) => {
     }
     // console.log(req.body);
 });
+
+Router.post('/userfind', async (req, res) => {
+    let { phone } = req.body;
+
+    let result = await mongo.find('user', { phone });
+    if (result.length) {
+        //用户存在
+        res.send(formatdata({ code: 0 }));
+
+    }
+    else {
+        //可以注册
+        result = formatdata();
+        res.send(formatdata());
+    }
+
+})
 
 /*
 发送验证码短信
