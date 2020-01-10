@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { HashRouter, Route, Link, NavLink, Switch, Redirect, withRouter } from 'react-router-dom';
-
+import List from './pages/List';
+import List2 from './pages/List2';
+import Details from './pages/Details';
 import Home from './pages/Home';
 import Mine from './pages/mine';
 import Sj from './pages/Sj';
@@ -18,6 +20,7 @@ import './scss/App.scss'
 class App extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
 
       menu: [{
@@ -42,6 +45,7 @@ class App extends Component {
     }
     this.goto = this.goto.bind(this);
     this.lenmon = this.lenmon.bind(this);
+    this.booklist = this.booklist.bind(this);
 
   }
   lenmon() {
@@ -54,6 +58,21 @@ class App extends Component {
     }
     else {
       this.props.history.push('/mine')
+
+
+    }
+
+  }
+  booklist() {
+    //获取token2
+    let token = localStorage.getItem('phone');
+
+    if (!token) {
+      this.props.history.push('/reg')
+
+    }
+    else {
+      this.props.history.push('/sj')
 
 
     }
@@ -74,6 +93,9 @@ class App extends Component {
         <Route path='/mine' component={Mine} />
         <Route path='/reg' component={Reg} />
         <Route path='/login' component={Login} />
+        <Route path='/details' component={Details} />
+        <Route path='/list' component={List} />
+        <Route path='/list2' component={List2} />
         {/* <Route path='/goods/:id' component={Goods} />
         <Route path='/login' component={Login} />
         <Route path='/reg' component={Reg} /> */}
@@ -90,7 +112,7 @@ class App extends Component {
           <Button
             type="link"
             icon="user-add"
-            onClick={this.goto.bind(this, '/sj')}
+            onClick={this.booklist.bind(null)}
           >书架</Button>
         </Col>
         <Col className="nav-link" span={8} style={{ lineHeight: '49px', textAlign: 'center' }}>

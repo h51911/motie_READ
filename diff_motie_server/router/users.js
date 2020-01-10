@@ -130,6 +130,42 @@ Router.get('/shoppingcarget', async (req, res) => {
     }
 });
 
+
+//添加书本
+
+Router.post('/addbook', async (req, res) => {
+
+    let {
+        id,
+        icon,
+        phone,
+        name
+
+    } = req.body;
+    let data = await mongo.create('bookshop', [{
+        id,
+        icon,
+        phone,
+        name
+
+    }]);
+
+
+    let result = null;
+    if (data.insertedCount) {
+        //插入成功
+
+        result = formatdata();
+
+    }
+    else {
+        result = formatdata({
+            code: 0
+        });
+    }
+    res.send(result);
+
+});
 //注册
 Router.post('/reg', async (req, res) => {
 
@@ -199,7 +235,7 @@ Router.post('/reg', async (req, res) => {
 //     // console.log(req.body);
 // });
 //登录
-   Router.post('/login', async (req, res) => {
+Router.post('/login', async (req, res) => {
     let { phone, password } = req.body;
 
     let result = await mongo.find('user', { phone, password });
@@ -233,6 +269,25 @@ Router.post('/userfind', async (req, res) => {
 
 })
 
+
+
+//查询书本
+Router.post('/books', async (req, res) => {
+    let { phone, id } = req.body;
+
+    let result = await mongo.find('bookshop', { phone, id });
+    if (result.length) {
+        //用户存在
+        res.send(formatdata({ code: 0 }));
+
+    }
+    else {
+        //可以注册
+        result = formatdata();
+        res.send(formatdata());
+    }
+
+})
 /*
 发送验证码短信
 */
