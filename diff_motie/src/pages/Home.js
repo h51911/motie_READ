@@ -5,6 +5,8 @@ import { Carousel } from 'antd';
 class Home extends Component {
   constructor() {
     super();
+
+    this.gotolist = this.gotolist.bind(this)
     this.state = {
       recommend: [
         {
@@ -22,6 +24,10 @@ class Home extends Component {
     }
 
   }
+
+  gotolist() {
+    this.props.history.push('/list')
+  }
   // goto=(id)=>{
   //   this.props.history.push('//')
   // }
@@ -31,7 +37,7 @@ class Home extends Component {
   //   });
 
   // }
-  render () {
+  render() {
 
     return <div className="mt">
       <>
@@ -88,7 +94,7 @@ class Home extends Component {
             </h3>
             <section className="con2">
               <ul className="con2-1">
-                <li>
+                <li onClick={this.gotolist.bind(null)}>
                   <img src="https://cdn.motieimg.com/book/0015/156198/1.jpg?x-oss-process=image/resize,m_lfit,h_238,w_170" />
                   <p>地狱迷航</p>
                 </li>
