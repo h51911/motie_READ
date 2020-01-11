@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import { HashRouter, Route, Link, NavLink, Switch, Redirect, withRouter } from 'react-router-dom';
-
+import List from './pages/List';
+import List2 from './pages/List2';
+import Details from './pages/Details';
 import Home from './pages/Home';
-import My from './pages/My';
+import Mine from './pages/mine';
 import Sj from './pages/Sj';
-
-// import "./scss/Jxuan.css"
+import Reg from './pages/reg';
+import Login from './pages/login';
+import "./scss/Jxuan.css"
 // import './App.scss';
 import { Menu, Icon, Row, Col, Button, Badge } from 'antd';
 import 'antd/dist/antd.css'
+import './scss/App.scss'
 
 
 
@@ -16,7 +20,9 @@ import 'antd/dist/antd.css'
 class App extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
+
       menu: [{
         name: 'sj',
         path: '/sj',
@@ -30,22 +36,51 @@ class App extends Component {
         icon: 'star'
       },
       {
-        name: 'my',
-        path: '/my',
+        name: 'mine',
+        path: '/mine',
         text: '我的',
         icon: 'my'
       }
       ]
     }
     this.goto = this.goto.bind(this);
+    this.lenmon = this.lenmon.bind(this);
+    this.booklist = this.booklist.bind(this);
+
+  }
+  lenmon () {
+    //获取token
+    let token = localStorage.getItem('phone');
+
+    if (!token) {
+      this.props.history.push('/reg')
+
+    }
+    else {
+      this.props.history.push('/mine')
+
+
+    }
+
+  }
+  booklist () {
+    //获取token2
+    let token = localStorage.getItem('phone');
+
+    if (!token) {
+      this.props.history.push('/reg')
+
+    }
+    else {
+      this.props.history.push('/sj')
+
+
+    }
 
   }
 
-
   goto (path) {
     this.props.history.push(path)
-    console.log('this', this.props);
-
   }
   render () {
     let { menu } = this.state;
@@ -55,7 +90,12 @@ class App extends Component {
         <Route path='/sj' component={Sj} />
 
         <Route path='/home' component={Home} />
-        <Route path='/my' component={My} />
+        <Route path='/mine' component={Mine} />
+        <Route path='/reg' component={Reg} />
+        <Route path='/login' component={Login} />
+        <Route path='/details' component={Details} />
+        <Route path='/list' component={List} />
+        <Route path='/list2' component={List2} />
         {/* <Route path='/goods/:id' component={Goods} />
         <Route path='/login' component={Login} />
         <Route path='/reg' component={Reg} /> */}
@@ -67,12 +107,12 @@ class App extends Component {
         <Redirect to="/notfound" />
         {/* <Route path="/" component={Home}/> */}
       </Switch>
-      <Row style={{ backgroundColor: '#fff' }} className="bottom">
+      <Row style={{ backgroundColor: '#fff', width: '100%' }} className="chooseitem">
         <Col span={8} style={{ lineHeight: '49px', textAlign: 'center' }}>
           <Button
             type="link"
             icon="user-add"
-            onClick={this.goto.bind(this, '/sj')}
+            onClick={this.booklist.bind(null)}
           >书架</Button>
         </Col>
         <Col className="nav-link" span={8} style={{ lineHeight: '49px', textAlign: 'center' }}>
@@ -88,7 +128,7 @@ class App extends Component {
           <Button
             type="link"
             icon="login"
-            onClick={this.goto.bind(this, '/my')}
+            onClick={this.lenmon.bind(null)}
           >我的</Button>
 
         </Col>

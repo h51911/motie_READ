@@ -155,6 +155,25 @@ dl li {
       }
     }
 
+
+
+
+    .img {
+      width: 100%;
+      height: 143px;
+      margin-top: 8px;
+
+      img {
+
+        display: block;
+        width: 100%;
+        height: 143px;
+
+        background-size: cover;
+      }
+
+    }
+
     .con2 {
       width: 100%;
 

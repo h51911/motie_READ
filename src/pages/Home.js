@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import Api from '../api/index.js';
+import Api from '../api/ListApi.js';
 import { Carousel, Tabs } from 'antd';
 import '../scss/iconfont/iconfont.css';
+import { withRouter } from 'react-router-dom'
 import '../scss/base.css';
-import Main from './main'
+import Main from '../main'
 // import GoodLast from '../component/GoodLast'
 import axios from 'axios';
 import { min } from "moment";
@@ -122,6 +123,7 @@ class Home extends Component {
       pageSize: 100
     });
     let datalist1 = datalistOne1.data.bookList;
+
     this.setState({
       datalist1,
     })
@@ -151,10 +153,10 @@ class Home extends Component {
   // })
 
   render () {
-    let { datalist1, datalist3, datalist2, show, menu } = this.state;
-    console.log(show, '11');
+    console.log(this.props)
+    let { datalist1, show, menu } = this.state;
 
-
+    console.log(datalist1, '232323')
     return <div className="mt">
 
       <header>
@@ -165,7 +167,7 @@ class Home extends Component {
           <li onClick={this.ty.bind(this, 3)}>出版</li> */}
           {
             menu.map((item, index) => {
-              return <li key={index} onClick={this.ty.bind(this, index + 1)} className={show === index +1? "active" : ""
+              return <li key={index} onClick={this.ty.bind(this, index + 1)} className={show === index + 1 ? "active" : ""
               }
               >
                 {item.name}
@@ -201,4 +203,5 @@ class Home extends Component {
     </div >
   }
 }
+
 export default Home;
