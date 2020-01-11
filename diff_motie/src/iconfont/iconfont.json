@@ -1,0 +1,30 @@
+{
+  "id": "1599976",
+  "name": "磨铁",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "404882",
+      "name": "群蜂新浪微博",
+      "font_class": "qunfengxinlangweibo",
+      "unicode": "e6e5",
+      "unicode_decimal": 59109
+    },
+    {
+      "icon_id": "1346645",
+      "name": "百度1",
+      "font_class": "baidu1",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "4178736",
+      "name": "AK-SR腾讯QQ",
+      "font_class": "sr_qq",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+.regtitle{
+
+    display: flex;
+    align-items: center;
+    background-color: #fbf9fe;
+    height: 1.375rem;
+    width: 100%;
+
+    .backto{
+        width: 1.75rem;
+        text-align: center;
+        color: gray;
+        height: 1.375rem;
+        font-size: .5rem;   
+        line-height:  1.375rem;
+    }
+
+    h2{
+        font-size: .437333rem;
+        height: 1.375rem;
+        width: 7.8125rem    ;
+        text-align: center;
+        line-height:  1.375rem;
+    }
+    .backtohome{
+        height: 1.375rem;
+        width: 1.5625rem;
+        font-size: .5rem;
+        text-align: center;
+        line-height:  1.375rem;
+    }
+  
+
+}

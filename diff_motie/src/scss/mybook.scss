@@ -1,0 +1,79 @@
+.mybookshop{
+
+    width: 100%;
+    height: 1.375rem;
+    font-size: .625rem;
+    text-align: center;
+    line-height: 1.375rem;
+  
+
+}
+.booktitle{
+    height: 1.4375rem;
+    box-sizing: border-box;
+    padding: .3125rem;
+    width: 100%;
+    font-size: .4375rem;
+    background-color: rgb(224, 224, 224);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .15625rem;
+
+    .bookmanage{
+        display: block;
+        background-color: red;
+        color: white;
+        font-size: .4675rem;
+        width: 1.3625rem;
+        height: .8575rem;
+        text-align: center;
+        line-height: .8575rem;
+        border-radius: .3125rem;
+
+    }
+  
+}
+
+.booklist{
+    height: 3.0375rem;
+    width: 100%;
+    padding: 0 .3125rem;
+    display: flex;
+    position: relative;
+    border-bottom: .03125rem solid rgb(139, 137, 137);
+    .del{
+        position: absolute;
+        right: .3125rem;
+        top: .9375rem;
+        background-color: red;
+        color: white;
+        
+     
+    }
+    .delview{
+        position: absolute;
+        right: .3125rem;
+        top: .9375rem;
+        background-color: red;
+        color: white;
+        display: none;
+    }
+
+    img{
+        width: 1.78125rem;
+        height: 2.5rem;
+    }
+    
+    p{
+        display: flex;
+        flex-direction: column;
+        span{
+            font-size: .4375rem;
+            margin: .3125rem;
+        }
+        span:nth-child(2){
+            color: rgb(153, 129, 85);
+        }
+    }
+}
