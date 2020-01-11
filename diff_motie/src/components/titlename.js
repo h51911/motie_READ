@@ -17,7 +17,7 @@ class Titlename extends Component {
         return (
             <div className='regtitle'>
                 <Icon className='backto' type="left"
-
+                    onClick={this.props.back}
                 />
 
                 <h2 >{this.props.children}</h2>

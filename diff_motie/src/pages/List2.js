@@ -29,6 +29,10 @@ class List2 extends Component {
         });
     }
 
+    back = () => {
+        this.props.history.goBack();
+    }
+
     changeType1 = async (sex) => {
         let data1 = await Listss.get({
             rankType: 9,
@@ -88,13 +92,13 @@ class List2 extends Component {
     }
 
     render() {
-        let { goto } = this;
+        let { goto,back } = this;
         let { menu, activeKey, activeKey1, datalist } = this.state;
         return (
             <MyContext.Provider value={{ goto }}>
                 <div id="listtwo">
                     <header className="header">
-                        <div className="leftgg">
+                        <div className="leftgg" onClick={back}>
                             <span className="icon"></span>
                         </div>
                         <div className="centerll">

@@ -6,7 +6,8 @@ class Home extends Component {
   constructor() {
     super();
 
-    this.gotolist = this.gotolist.bind(this)
+    this.gotolist = this.gotolist.bind(this);
+    this.gotolist2 = this.gotolist2.bind(this);
     this.state = {
       recommend: [
         {
@@ -28,6 +29,13 @@ class Home extends Component {
   gotolist() {
     this.props.history.push('/list')
   }
+
+  
+  gotolist2() {
+    this.props.history.push('/list2')
+  }
+
+
   // goto=(id)=>{
   //   this.props.history.push('//')
   // }
@@ -62,13 +70,13 @@ class Home extends Component {
           </Carousel>
 
           <ul className="content1">
-            <li>
+            <li onClick={this.gotolist.bind(null)}>
               <img src="https://cdn.motieimg.com/store/df8957907895e5afd47eb6c64e464bfc.png" />
               <p>
                 分类
             </p>
             </li>
-            <li>
+            <li onClick={this.gotolist2.bind(null)}>
               <img src="https://cdn.motieimg.com/store/e7e3ceaeac429214e7547f34b5bc17c4.png" />
               <p>
                 排行

@@ -34,20 +34,6 @@ let { formatdata } = require('../utils/formatdata');
 //     // res.send({ data: result });
 // });
 
-//查询第一页nav用户
-Router.get('/nav', async (req, res) => {
-    let result = await mongo.find('indexlist', req.query);
-    if (result.length) {
-        res.send(formatdata({ data: result }));
-    } else {
-        res.send(formatdata({ code: 0 }));
-    }
-});
-
-//仿写
-Router.get('/banana', (req, res) => {
-    res.send('2')
-});
 
 
 //查询所有商家用户
@@ -61,27 +47,9 @@ Router.get('/shops', async (req, res) => {
     // res.send({ data: result });
 });
 
-//查询所有左侧
-Router.get('/listtitle', async (req, res) => {
-    let result = await mongo.find('listtitle', req.query);
-    if (result.length) {
-        res.send(result);
-    } else {
-        res.send(formatdata({ code: 0 }));
-    }
-    // res.send({ data: result });
-});
 
-//查询所有右侧
-Router.get('/orderlist', async (req, res) => {
-    let result = await mongo.find('orderlist', req.query);
-    if (result.length) {
-        res.send(result);
-    } else {
-        res.send(formatdata({ code: 0 }));
-    }
-    // res.send({ data: result });
-});
+
+
 
 //搜索栏查询
 Router.post('/search', async (req, res) => {
@@ -94,41 +62,9 @@ Router.post('/search', async (req, res) => {
     }
 });
 
-//购物车数据插入
-Router.post('/shoppingcar', async (req, res) => {
-    let { username, password, buycount, buyname, buyprice, zprice } = req.body;
-    // let { password } = req.query;
-    let result = await mongo.create('shoppingcar', [{ username, password, buycount, buyname, buyprice, zprice }]);
-    if (result.insertedCount) {
-        res.send(formatdata());//插入成功
-        // res.send(formatdata());
-    } else {
-        res.send(formatdata({ code: 0 }));//插入失败
-    }
-});
 
-//购物车数据增加
-Router.post('/shoppingcar', async (req, res) => {
-    let { username, password, buycount, buyname, buyprice, zprice } = req.body;
-    // let { password } = req.query;
-    let result = await mongo.update('shoppingcar', [{ username, password, buycount, buyname, buyprice, zprice }]);
-    if (result.insertedCount) {
-        res.send(formatdata());//插入成功
-        // res.send(formatdata());
-    } else {
-        res.send(formatdata({ code: 0 }));//插入失败
-    }
-});
 
-//购物车数据拿
-Router.get('/shoppingcarget', async (req, res) => {
-    let result = await mongo.find('shoppingcar', req.query);
-    if (result.length) {
-        res.send(formatdata({ data: result }));
-    } else {
-        res.send(formatdata({ code: 0 }));
-    }
-});
+
 
 
 //添加书本
@@ -288,28 +224,35 @@ Router.post('/books', async (req, res) => {
     }
 
 })
-/*
-发送验证码短信
-*/
-// Router.get('/sendcode', function (req, res, next) {
-//     //1. 获取请求参数数据
-//     var phone = req.query.phone;
-//     //2. 处理数据
-//     //生成验证码(6位随机数)
-//     var code = sms_util.randomCode(6);
-//     //发送给指定的手机号
-//     console.log(`向${phone}发送验证码短信: ${code}`);
-//     sms_util.sendCode(phone, code, function (success) {//success表示是否成功
-//         if (success) {
-//             users[phone] = code
-//             console.log('保存验证码: ', phone, code)
-//             res.send({ "code": 0 })
-//         } else {
-//             //3. 返回响应数据
-//             res.send({ "code": 1, msg: '短信验证码发送失败' })
-//         }
-//     })
-// })
+//查询渲染书本
+Router.post('/bookshoplist', async (req, res) => {
+    let { phone } = req.body;
+
+    let result = await mongo.find('bookshop', { phone });
+
+    res.send(result);
+
+})
+
+//删除
+Router.post('/del', async (req, res) => {
+    let { phone, id } = req.body;
+
+    let result = await mongo.remove('bookshop', { phone, id });
+    if (result.length) {
+        //用户存在
+        res.send(result);
+
+    }
+    else {
+        //可以注册
+        result = formatdata();
+        res.send(formatdata({ code: 0 }));
+    }
+
+})
+
+
 
 
 module.exports = Router;//导出模块

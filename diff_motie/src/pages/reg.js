@@ -32,7 +32,11 @@ class Reg extends Component {
         this.verifyphone = this.verifyphone.bind(this);
         this.setmessage = this.setmessage.bind(this);
         this.gotomine = this.gotomine.bind(this);
-
+  this.back=this.back.bind(this)
+    }
+    
+    back = () => {
+        this.props.history.goBack();
     }
     changnumber(e) {
         //绑定数据
@@ -219,10 +223,11 @@ class Reg extends Component {
 
     }
     render() {
+        let { back } = this;
 
         return (
             <>
-                <Titlename >手机快捷登录/注册</Titlename>
+                <Titlename back={back}>手机快捷登录/注册</Titlename>
 
 
                 <div className='main'>

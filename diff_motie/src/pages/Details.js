@@ -20,10 +20,25 @@ class Details extends Component {
             datalist: [],
             introduce: ''
         }
+        window.scrollTo(10,0);
     }
 
     back = () => {
         this.props.history.goBack();
+    }
+
+    gotologin = () => {
+        // console.log(this.props);
+        this.props.history.push({
+            pathname: '/login',
+        });
+    }
+
+    gotohome = () => {
+        // console.log(this.props);
+        this.props.history.push({
+            pathname: '/home',
+        });
     }
 
     addtobook() {
@@ -92,15 +107,18 @@ class Details extends Component {
             datalist,
             introduce
         })
+        // document.querySelector(".con").scrollTop = 0;
+        // window.scrollTo(10,0);
+
     }
 
     render() {
-        let { back } = this;
+        let { back,gotologin,gotohome } = this;
         return (
-            <MyContext.Provider value={{ back }}>
+            <MyContext.Provider value={{ back,gotologin,gotohome }}>
                 <div id="details">
 
-                    <Header left="作品详情" icon1={"icon-sousuo1"} icon2={"icon-fangzi1"} />
+                    <Header left="作品详情" icon1={"icon-sousuo1"} icon2={"icon-fangzi1"} gotologin={gotologin} gotohome={gotohome}/>
 
                     <div className="con">
                         <Listfooter datalist={this.state.datalist} />

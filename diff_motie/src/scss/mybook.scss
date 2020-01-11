@@ -29,8 +29,10 @@
         height: .8575rem;
         text-align: center;
         line-height: .8575rem;
+        border-radius: .3125rem;
 
     }
+  
 }
 
 .booklist{
@@ -46,6 +48,16 @@
         top: .9375rem;
         background-color: red;
         color: white;
+        
+     
+    }
+    .delview{
+        position: absolute;
+        right: .3125rem;
+        top: .9375rem;
+        background-color: red;
+        color: white;
+        display: none;
     }
 
     img{

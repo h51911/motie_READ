@@ -10,7 +10,7 @@ function Header(props) {
         <MyContext.Consumer>
             {
                 (value) => {
-                    let { back } = value;
+                    let { back,gotologin,gotohome } = value;
                     return (
                         <header id="header">
                             <div className="left">
@@ -21,8 +21,9 @@ function Header(props) {
                                 <h1 className="center">{tt.center}</h1>
                             </div>
                             <div className="right">
-                                <span className={"iconfont " + tt.icon1}></span>
-                                <span className={"iconfont " + tt.icon2}></span>
+                                <span className={"iconfont " + tt.icon1} onClick={gotologin}></span>
+                                <span className={"iconfont " + tt.icon2}
+                                onClick={gotohome}></span>
                             </div>
                         </header>
                     )
