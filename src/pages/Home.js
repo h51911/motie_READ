@@ -1,188 +1,204 @@
 import React, { Component } from "react";
-
-import "../scss/Jxuan.css"
-import { Carousel } from 'antd';
+import Api from '../api/index.js';
+import { Carousel, Tabs } from 'antd';
+import '../scss/iconfont/iconfont.css';
+import '../scss/base.css';
+import Main from './main'
+// import GoodLast from '../component/GoodLast'
+import axios from 'axios';
+import { min } from "moment";
+import { Item } from "rc-menu";
 class Home extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      recommend: [
+      datalist2: [],
+      datalist3: [],
+      datalist1: [],
+      show: 1,
+      menu: [
         {
-          url: './images/ia_100000005.jpg'
+          name: '男生',
+          id: 1
         },
         {
-          url: './images/ia_100000006.jpg'
+          name: '女生',
+          id: 2
         },
         {
-          url: './images/ia_100000007.jpg'
+          name: '出版',
+          id: 3
         }
       ]
-      // recommend:[]
-      // datalist:[]
+
     }
+    this.ty = this.ty.bind(this);
 
   }
-  // goto=(id)=>{
-  //   this.props.history.push('//')
-  // }
-  // async componentDidMount () {
-  //   let data = await ExtensionScriptApis.length({
 
-  //   });
 
-  // }
+  async componentDidMount () {
+    // this.ty(show);
+
+
+    // let datalistOne1 = await Api.get({
+    //   rankType: 9,
+    //   sex: 1,
+    //   pageNo: 1,
+    //   siteId: 99,
+    //   timeLimit: 4,
+    //   group: 1,
+    //   pageSize: 100
+    // });
+    // let datalist1 = datalistOne1.data.bookList;
+    // this.setState({
+
+    //   datalist1,
+
+
+    // })
+
+    // let datalistOne2 = await Api.get({
+    //   rankType: 9,
+    //   sex: 2,
+    //   pageNo: 1,
+    //   siteId: 99,
+    //   timeLimit: 4,
+    //   group: 1,
+    //   pageSize: 100
+    // });
+
+    // let datalist2 = datalistOne2.data.bookList;
+    // let datalistOne3 = await Api.get({
+    //   rankType: 9,
+    //   sex: 3,
+    //   pageNo: 1,
+    //   siteId: 99,
+    //   timeLimit: 4,
+    //   group: 1,
+    //   pageSize: 100
+    // });
+    // let datalist3 = datalistOne3.data.bookList;
+    // this.setState({
+    //   datalist1,
+    //   datalist2,
+    //   datalist3,
+
+
+    // })
+
+    let datalistOne1 = await Api.get({
+      rankType: 9,
+      sex: 1,
+      pageNo: 1,
+      siteId: 99,
+      timeLimit: 4,
+      group: 1,
+      pageSize: 100
+    });
+    let datalist1 = datalistOne1.data.bookList;
+    this.setState({
+
+      datalist1,
+
+    })
+
+  }
+
+
+
+
+  async ty (show) {
+    this.setState({
+      show: show
+    });
+    let datalistOne1 = await Api.get({
+      rankType: 9,
+      sex: show,
+      pageNo: 1,
+      siteId: 99,
+      timeLimit: 4,
+      group: 1,
+      pageSize: 100
+    });
+    let datalist1 = datalistOne1.data.bookList;
+    this.setState({
+      datalist1,
+    })
+
+  }
+
+
+  // axios.get('http://localhost:2001/hoelist/find').then(res => {
+  //   console.log('res', res);
+  //   axios.get('http://localhost:2001/hoelist/find', {
+  //     params: {
+  //       name: 2
+  //     }
+  //   }).then(res => {
+  //     console.log('res', res);
+
+  // })
+  // axios.get('http://localhost:2001/hoelist/find').then(res => {
+
+  //   let datas = [];
+  //   datas.push(res);
+  //   this.setState({
+  //     datas
+  //   })
+
+
+  // })
+
   render () {
+    let { datalist1, datalist3, datalist2, show, menu } = this.state;
+    console.log(show, '11');
+
 
     return <div className="mt">
-      <>
-        <header>
 
-        </header>
+      <header>
+        <img alt="" src="./imgs/ia_100000000.png" />
+        <ul className="h-1">
+          {/* <li onClick={this.ty.bind(this, 1)}>男生</li>
+          <li onClick={this.ty.bind(this, 2)}>女生</li>
+          <li onClick={this.ty.bind(this, 3)}>出版</li> */}
+          {
+            menu.map((item, index) => {
+              return <li key={index} onClick={this.ty.bind(this, index + 1)} className={show === index +1? "active" : ""
+              }
+              >
+                {item.name}
+              </li>
+            })
+          }
+        </ul>
 
-        <main>
-          <Carousel className="banner1" autoplay="true">
-            <div>
-              <img src="https://cdn.motieimg.com/book/0015/156198/1.jpg?x-oss-process=image/resize,m_lfit,h_238,w_170" />
-            </div>
-            <div>
-              <img src="https://cdn.motieimg.com/book/0015/150744/1.jpg?x-oss-process=image/resize,m_lfit,h_238,w_170" />
-            </div>
-            <div>
-              <img src="https://cdn.motieimg.com/book/0015/150744/1.jpg?x-oss-process=image/resize,m_lfit,h_238,w_170" />
-            </div>
-            <div>
-              <img src="https://cdn.motieimg.com/book/0015/150744/1.jpg?x-oss-process=image/resize,m_lfit,h_238,w_170" />
-            </div>
-          </Carousel>
+        {/* <Tabs
+            defaultActiveKey={1}
+            tabPosition='top'
+            className="h-1"
+          >
+            <Tabs.TabPane tab="男生" key="1" onClick={this.ty.bind(this, 1)}>
+              <Main datalist1={datalist2}></Main>
+            </Tabs.TabPane>
+            <Tabs.TabPane tab="女生" key="2" onClick={this.ty.bind(this, 2)}>
+            
+            </Tabs.TabPane>
+            <Tabs.TabPane tab="出版" key="3" onClick={this.ty.bind(this, 3)}>
+            
+            </Tabs.TabPane>
+          </Tabs> */}
+        <p>
 
-          <ul className="content1">
-            <li>
-              <img src="https://cdn.motieimg.com/store/df8957907895e5afd47eb6c64e464bfc.png" />
-              <p>
-                分类
-            </p>
-            </li>
-            <li>
-              <img src="https://cdn.motieimg.com/store/e7e3ceaeac429214e7547f34b5bc17c4.png" />
-              <p>
-                排行
-            </p>
-            </li>
-            <li>
-              <img src="https://cdn.motieimg.com/store/2a8d03f1b8ee3e6168582b10c8c5bb84.png" />
-              <p>
-                全本
-            </p>
-            </li>
-            <li>
-              <img src="https://cdn.motieimg.com/store/aa87fbe0e4f9170feb7bb4be3a5b4e0e.png" />
-              <p>
-                免费
-            </p>
-            </li>
-          </ul>
-          <section className="con1">
-            <h3>
-              <em>|</em>
-              主编力荐
-            </h3>
-            <section className="con2">
-              <ul className="con2-1">
-                <li>
-                  <img src="https://cdn.motieimg.com/book/0015/156198/1.jpg?x-oss-process=image/resize,m_lfit,h_238,w_170" />
-                  <p>地狱迷航</p>
-                </li>
-                <li>
-                  <img src="https://cdn.motieimg.com/book/0015/156198/1.jpg?x-oss-process=image/resize,m_lfit,h_238,w_170" />
-                  <p>地狱迷航</p>
-                </li>
-                <li>
-                  <img src="https://cdn.motieimg.com/book/0015/156198/1.jpg?x-oss-process=image/resize,m_lfit,h_238,w_170" />
-                  <p>地狱迷航</p>
-                </li>
-              </ul>
-
-            </section>
-          </section>
-          <section className="con2">
-            <h3>
-              <em>|</em>
-              本期主打分类
-          </h3>
-            <dl>
-              <dt><img src="https://cdn.motieimg.com/book/0010/102518/3.jpg?x-oss-process=image/resize,m_lfit,h_238,w_170" /></dt>
-              <dd>
-                <h4>
-                  诡命法医
-            </h4>
-                <b>一把千年以前的‘手术刀’，半本祖辈遗留的残卷。
-    法医，在很久以前，也叫仵作。
-    我，徐祸。接受了现代法医学科教育，却意外得到一把传承千年的——仵作的刀。
-    “凡斗殴伤重不能重履之人，不得扛抬赴验，该管官即带领仵作亲往验看。”
-    “其有检验得法，洗雪沈冤厚给予之。”
-           </b>
-                <p>
-                  <img src="https://cdn.motieimg.com/people/0573/5739459/1.jpg?x-oss-process=image/resize,m_lfit,h_30,w_30" />
-                  <span>天降工人</span>
-                  <i>
-                    悬疑探险
-             </i>
-                </p>
-              </dd>
-            </dl>
-            <dl>
-              <dt><img src="https://cdn.motieimg.com/book/0010/102518/3.jpg?x-oss-process=image/resize,m_lfit,h_238,w_170" /></dt>
-              <dd>
-                <h4>
-                  诡命法医
-                 </h4>
-                <b>一把千年以前的‘手术刀’，半本祖辈遗留的残卷。
-                法医，在很久以前，也叫仵作。
-                我，徐祸。接受了现代法医学科教育，却意外得到一把传承千年的——仵作的刀。
-                “凡斗殴伤重不能重履之人，不得扛抬赴验，该管官即带领仵作亲往验看。”
-                “其有检验得法，洗雪沈冤厚给予之。”
-               </b>
-                <p>
-                  <img src="https://cdn.motieimg.com/people/0573/5739459/1.jpg?x-oss-process=image/resize,m_lfit,h_30,w_30" />
-                  <span>天降工人</span>
-                  <i>
-                    悬疑探险
-               </i>
-                </p>
-              </dd>
-            </dl>
-            <dl>
-              <dt><img src="https://cdn.motieimg.com/book/0010/102518/3.jpg?x-oss-process=image/resize,m_lfit,h_238,w_170" /></dt>
-              <dd>
-                <h4>
-                  诡命法医
-              </h4>
-                <b>一把千年以前的‘手术刀’，半本祖辈遗留的残卷。
-                      法医，在很久以前，也叫仵作。
-                      我，徐祸。接受了现代法医学科教育，却意外得到一把传承千年的——仵作的刀。
-                      “凡斗殴伤重不能重履之人，不得扛抬赴验，该管官即带领仵作亲往验看。”
-                      “其有检验得法，洗雪沈冤厚给予之。”
-              </b>
-                <p>
-                  <img src="https://cdn.motieimg.com/people/0573/5739459/1.jpg?x-oss-process=image/resize,m_lfit,h_30,w_30" />
-                  <span>天降工人</span>
-                  <i>
-                    悬疑探险
-             </i>
-                </p>
-              </dd>
-            </dl>
-            <em className="more">查看更多</em>
-          </section>
-          <section className="conNext">
-            <h3>
-
-            </h3>
-          </section>
-        </main>
-
-      </>
-    </div>
+          <em className="iconfont icon-sousuokuang"></em>
+          <em className="iconfont icon-hengxian"></em>
+        </p>
+      </header>
+      <section className='he'></section>
+      <Main datalist1={datalist1}></Main>
+      {/* {this.state.show === 1 ? <Main datalist1={datalist1}></Main> : (this.state.show === 2 ? <Main datalist1={datalist2}></Main> : (this.state.show === 3 ? <Main datalist1={datalist3}></Main> : <Main datalist1={datalist1}></Main>))} */}
+    </div >
   }
 }
 export default Home;

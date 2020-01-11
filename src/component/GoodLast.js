@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 const GoodLast = ({ datalist1 }) => {
-  console.log('datalist2', datalist1);
+
 
   return (
     <>

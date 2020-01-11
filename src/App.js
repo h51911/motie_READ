@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import My from './pages/My';
 import Sj from './pages/Sj';
 
-import "./scss/Jxuan.css"
+// import "./scss/Jxuan.css"
 // import './App.scss';
 import { Menu, Icon, Row, Col, Button, Badge } from 'antd';
 import 'antd/dist/antd.css'
@@ -40,8 +40,12 @@ class App extends Component {
     this.goto = this.goto.bind(this);
 
   }
+
+
   goto (path) {
     this.props.history.push(path)
+    console.log('this', this.props);
+
   }
   render () {
     let { menu } = this.state;
@@ -80,7 +84,7 @@ class App extends Component {
 
         </Col>
         <Col span={8} style={{ lineHeight: '49px', textAlign: 'center' }}>
-          
+
           <Button
             type="link"
             icon="login"
@@ -89,6 +93,9 @@ class App extends Component {
 
         </Col>
       </Row>
+      <p className="nQ">
+
+      </p>
 
 
     </div>
